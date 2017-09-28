@@ -1,0 +1,42 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h2>My Cities</h2>
+  <div class="weathers">
+    <li *ngFor="let weather of weathers" [class.selected]="weather === selectedWeather">
+      <label class="badge">{{weather.city}}</label>
+      <div class="clear"></div>
+      <ul>日期：{{weather.date}}</ul>
+      <ul>湿度：{{weather.data.shidu}}</ul>
+      <ul>PM2.5：{{weather.data.pm25}}</ul>
+      <ul>PM10：{{weather.data.pm10}}</ul>
+      <ul>空气质量：{{weather.data.quality}}</ul>
+      <ul>温度：{{weather.data.wendu}}</ul>
+      <ul>感冒指数：{{weather.data.ganmao}}</ul>
+      <div class="clear"></div>
+      <ul class="day">
+        <li>日期：{{weather.data.yesterday.date}}</li>
+        <li>日出时刻：{{weather.data.yesterday.sunrise}}</li>
+        <li>日落时刻：{{weather.data.yesterday.sunset}}</li>
+        <li>最高温度：{{weather.data.yesterday.high}}</li>
+        <li>最低温度：{{weather.data.yesterday.low}}</li>
+        <li>空气质量指数：{{weather.data.yesterday.aqi}}</li>
+        <li>风向：{{weather.data.yesterday.fx}}</li>
+        <li>风力：{{weather.data.yesterday.fl}}</li>
+        <li>天气：{{weather.data.yesterday.type}}</li>
+        <li>提示：{{weather.data.yesterday.notice}}</li>
+      </ul>
+      <ul class="day" *ngFor="let day of weather.data.forecast">
+        <li>日期：{{day.date}}</li>
+        <li>日出时刻：{{day.sunrise}}</li>
+        <li>日落时刻：{{day.sunset}}</li>
+        <li>最高温度：{{day.high}}</li>
+        <li>最低温度：{{day.low}}</li>
+        <li>空气质量指数：{{day.aqi}}</li>
+        <li>风向：{{day.fx}}</li>
+        <li>风力：{{day.fl}}</li>
+        <li>天气：{{day.type}}</li>
+        <li>提示：{{day.notice}}</li>
+      </ul>
+    </li>
+  </div>
+</div>

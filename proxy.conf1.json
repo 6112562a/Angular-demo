@@ -1,0 +1,11 @@
+{
+  "/proxy/*": {
+    "target": "http://www.sojson.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/proxy": ""
+    }
+  }
+}
